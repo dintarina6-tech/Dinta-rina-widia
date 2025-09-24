@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulator Sederhana</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background-color: #ffffff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>Kalkulator Sederhana</h2>
+    <input type="number" id="angka1" placeholder="Masukkan angka pertama">
+    <input type="number" id="angka2" placeholder="Masukkan angka kedua">
+    
+    <select id="operator">
+      <option value="+">Tambah (+)</option>
+      <option value="-">Kurang (-)</option>
+      <option value="*">Kali (×)</option>
+      <option value="/">Bagi (÷)</option>
+    </select>
+    
+    <button onclick="hitung()">Hitung</button>
+  </div>
+
+  <script>
+    function hitung() {
+      const angka1 = parseFloat(document.getElementById('angka1').value);
+      const angka2 = parseFloat(document.getElementById('angka2').value);
+      const operator = document.getElementById('operator').value;
+
+      if (isNaN(angka1) || isNaN(angka2)) {
+        alert('Mohon masukkan dua angka yang valid.');
+        return;
+      }
+
+      let hasil;
+      switch (operator) {
+        case '+':
+          hasil = angka1 + angka2;
+          break;
+        case '-':
+          hasil = angka1 - angka2;
+          break;
+        case '*':
+          hasil = angka1 * angka2;
+          break;
+        case '/':
+          if (angka2 === 0) {
+            alert("Tidak bisa membagi dengan nol!");
+            return;
+          }
+          hasil = angka1 / angka2;
+          break;
+        default:
+          alert("Operator tidak dikenal");
+          return;
+      }
+
+      alert(`Hasil: ${hasil}`);
+    }
+  </script>
+</body>
+</html>
