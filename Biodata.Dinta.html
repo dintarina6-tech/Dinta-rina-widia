@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biodataku</title>
+  <style>
+    /* Reset dan dasar */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    .biodata-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      width: 350px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .biodata-card:hover {
+      transform: scale(1.05);
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      letter-spacing: 1.5px;
+    }
+    p.role {
+      font-size: 1.1rem;
+      color: #dcdcdc;
+      margin-bottom: 25px;
+      font-style: italic;
+    }
+    .info {
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .info strong {
+      display: inline-block;
+      width: 100px;
+      color: #ffd700;
+    }
+    button {
+      margin-top: 25px;
+      background-color: #ffd700;
+      color: #333;
+      border: none;
+      padding: 12px 25px;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    }
+    button:hover {
+      background-color: #ffc107;
+      box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
+    }
+    #moreInfo {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #eee;
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="biodata-card">
+    <img src="dinta~2.png" alt="Foto profiel" class="profile-pic" />
+    <h1>Dinta rina widia</h1>
+    <p class="role">pelajar smk & suka ngoding</p>
+    <div class="x ppl 2">
+      <p><strong>Umur:</strong> 15 tahun</p>
+      <p><strong>Alamat:</strong> Kp.cirendang Kec.karangpawitan,garut, Indonesia</p>
+      <p><strong>Telepon:</strong> +62 831 8051 4458</p>
+      <p><strong>Hobi:</strong></p> Hiking</p>
+    </div>
+    <button id="btnMore">Lihat Info Lain</button>
+    <div id="moreInfo">
+      <p>Suka hiking, traveling, dan panjat tebing.</p>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('btnMore');
+    const moreInfo = document.getElementById('moreInfo');
+
+    btn.addEventListener('click', () => {
+      if(moreInfo.style.display === 'none' || moreInfo.style.display === '') {
+        moreInfo.style.display = 'block';
+        btn.textContent = 'Sembunyikan Info';
+      } else {
+        moreInfo.style.display = 'none';
+        btn.textContent = 'Lihat Info Lain';
+      }
+    });
+  </script>
+</body>
+</html>
